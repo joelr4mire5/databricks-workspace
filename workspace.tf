@@ -6,7 +6,7 @@ resource "databricks_mws_networks" "this" {
   account_id         = var.databricks_account_id
   network_name       = "${var.project_name}-network-configuration"
   vpc_id             = aws_vpc.main_vpc.id
-  subnet_ids         = [aws_subnet.public_subnet_1.id,aws_subnet.public_subnet_2.id]
+  subnet_ids         = [aws_subnet.private_subnet_1.id,aws_subnet.private_subnet_2.id]
   security_group_ids = [aws_security_group.workspace_sg.id]
 }
 
